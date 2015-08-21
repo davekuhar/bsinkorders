@@ -1,0 +1,33 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage_BSInk.master.vb" Inherits="MasterPage_BSInk" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+   <!-- <title></title> -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="width: 100%">
+    <form id="form1" runat="server" style="background-color: #0066CC; width: 100%;">
+        <div  style="width: 50%; float:left; height:200px; margin:0; padding:0">
+            <br />
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Themes/BSI_SkinFile/Established1913.png" Style="text-align: center" Height="174px" Width="174px" />
+        </div>
+        <div  style="width: 50%; float:right; height:200px; text-align:right; margin:0; padding:0">
+            <asp:LoginName ID="LoginName1" runat="server"  /> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <asp:LoginView ID="LoginView1" runat="server">
+                <LoggedInTemplate>
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="RedirectToLoginPage" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                    <asp:LinkButton ID="lbChangePassword" runat="server" PostBackUrl="~/OrderProcessing/LoginChange.aspx">Change Password</asp:LinkButton>
+                </LoggedInTemplate>
+            </asp:LoginView>              
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+        </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
